@@ -1,28 +1,186 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Baby Clothing Forecast App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baby Clothing Forecast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #a3d2ca;
+      --secondary-color: #f7f6f2;
+      --accent-color: #5eaaa8;
+      --text-color: #333;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
       line-height: 1.6;
     }
-    h1, h2 {
-      color: #055e9a;
+
+    header {
+      background-color: var(--primary-color);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid var(--accent-color);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .container {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .features {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .feature {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .feature h3 {
+      margin-top: 0;
+      color: var(--accent-color);
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .cta button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cta button:hover {
+      background-color: #46908e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (min-width: 600px) {
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .app-screenshots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 0;
+    }
+
+    .screenshot {
+      width: 80%;
+      max-width: 280px;
+      border-radius: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .screenshot.primary {
+      transform: rotate(-4deg) translateY(10px);
+      z-index: 2;
+    }
+
+    .screenshot.secondary {
+      transform: rotate(4deg) translateY(-10px);
+      z-index: 1;
+      opacity: 0.95;
     }
   </style>
 </head>
 <body>
-<h1>Baby Clothing Forecast</h1>
-<p>Hier findest Du bald Informationen über die Baby Clothing Forecast App.</p>
-<img src="construction.png" alt="Baustelle - Seite im Aufbau" style="max-width:100%; height:auto;">
+
+<header>
+  <h1>Baby Clothing Forecast</h1>
+  <p>Wetterangepasste Kleidungsempfehlungen für Dein Baby</p>
+</header>
+
+<div class="container">
+  <div class="app-screenshots">
+    <img src="assets/app_device_overview_dark.png" alt="App Screenshot 1" class="screenshot primary" />
+    <img src="assets/app_device_overview_light.png" alt="App Screenshot 2" class="screenshot secondary" />
+  </div>
+
+  <section class="features">
+    <div class="feature">
+      <h3>📍 Standortbasierte Empfehlungen</h3>
+      <p>Erhalte automatische Outfit-Vorschläge passend zum Wetter an Deinem aktuellen Standort oder einem Ort Deiner Wahl.</p>
+    </div>
+
+    <div class="feature">
+      <h3>📅 7-Tage-Wetterprognose</h3>
+      <p>Plane die Kleidung Deines Babys für die ganze Woche mit zuverlässigen Wettervorhersagen.</p>
+    </div>
+
+    <div class="feature">
+      <h3>⚠️ Wetterwarnungen</h3>
+      <p>Erhalte Hinweise bei extremen Wetterbedingungen wie Hitze, Kälte oder starkem Wind – damit Du Dein Baby besonders gut schützen kannst.</p>
+    </div>
+
+    <div class="feature">
+      <h3>👶 Trage- & Kinderwagen-Modus</h3>
+      <p>Wähle den passenden Modus, damit Dein Baby immer ideal geschützt ist – egal ob Du es trägst oder im Wagen fährst.</p>
+    </div>
+
+    <div class="feature">
+      <h3>👕 Alternative Outfits & Favoriten</h3>
+      <p>Fehlt ein vorgeschlagenes Kleidungsstück? Kein Problem! Wähle eine passende Alternative und speichere sie als Favorit für künftige Empfehlungen.</p>
+    </div>
+
+    <div class="feature">
+      <h3>🌓 Automatischer Dark- & Light-Mode</h3>
+      <p>Die App passt sich automatisch der Darstellung Deines Geräts an – hell am Tag, dunkel bei Nacht.</p>
+    </div>
+  </section>
+
+  <div class="cta">
+    <p><strong>Erlebe, wie einfach es ist, Dein Baby wettergerecht anzuziehen!</strong></p>
+    <button>Jetzt App herunterladen</button>
+  </div>
+</div>
 
 <footer>
   <p><a href="privacy.html">Datenschutzerklärung</a></p>
+  <p><a href="impressum.html">Impressum</a></p>
+  &copy; 2025 Baby Clothing Forecast · Alle Rechte vorbehalten
 </footer>
+
 </body>
 </html>
