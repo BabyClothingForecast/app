@@ -4,337 +4,267 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baby Clothing Forecast</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #a3d2ca;
-      --secondary-color: #f7f6f2;
-      --accent-color: #5eaaa8;
-      --text-color: #333;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background-color: var(--secondary-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: var(--primary-color);
-      padding: 2rem 1rem 1.5rem;
-      text-align: center;
-      border-bottom: 3px solid var(--accent-color);
-      position: relative;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    .language-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      display: inline-flex;
-      border-radius: 999px;
-      overflow: hidden;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(4px);
-      font-size: 0.85rem;
-    }
-
-    .language-toggle button {
-      border: none;
-      background: transparent;
-      padding: 0.35rem 0.7rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-family: inherit;
-      color: #333;
-    }
-
-    .language-toggle button.active {
-      background: var(--accent-color);
-      color: #fff;
-    }
-
-    .language-toggle button:not(.active):hover {
-      background: rgba(255, 255, 255, 0.9);
-    }
-
-    .container {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .features {
-      display: grid;
-      gap: 2rem;
-    }
-
-    .feature {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .feature h3 {
-      margin-top: 0;
-      color: var(--accent-color);
-    }
-
-    .cta {
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .cta button.download {
-      background-color: var(--accent-color);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 2rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .cta button.download:hover {
-      background-color: #46908e;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    @media (min-width: 600px) {
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .app-screenshots {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 1rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 0;
-    }
-
-    .screenshot {
-      width: 80%;
-      max-width: 280px;
-      border-radius: 1.2rem;
-      transition: transform 0.3s ease;
-    }
-
-    .screenshot.primary {
-      transform: rotate(-4deg) translateY(10px);
-      z-index: 2;
-    }
-
-    .screenshot.secondary {
-      transform: rotate(4deg) translateY(-10px);
-      z-index: 1;
-      opacity: 0.95;
-    }
-
-    /* Language visibility */
-    .lang-de {
-      display: inline;
-    }
-
-    .lang-en {
-      display: none;
-    }
-
-    html[data-lang="en"] .lang-de {
-      display: none;
-    }
-
-    html[data-lang="en"] .lang-en {
-      display: inline;
-    }
-  </style>
+  <meta name="description" content="Baby Clothing Forecast unterstützt Eltern mit wetterbasierten Kleidungsempfehlungen und Orientierung für Schlafkleidung." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
-<body>
-
-<header>
-  <div class="language-toggle" aria-label="Sprachauswahl / Language switcher">
-    <button type="button" data-set-lang="de" class="active">DE</button>
-    <button type="button" data-set-lang="en">EN</button>
-  </div>
-
-  <h1>
-    <span class="lang-de">Baby Clothing Forecast</span>
-    <span class="lang-en">Baby Clothing Forecast</span>
-  </h1>
-  <p>
-    <span class="lang-de">Wetterangepasste Kleidungsempfehlungen für Dein Baby</span>
-    <span class="lang-en">Weather-based clothing recommendations for your baby</span>
-  </p>
-</header>
-
-<div class="container">
-  <div class="app-screenshots">
-    <img src="assets/app_device_overview_dark.png" alt="App Screenshot" class="screenshot primary" />
-    <img src="assets/app_device_overview_light.png" alt="App Screenshot" class="screenshot secondary" />
-  </div>
-
-  <section class="features">
-    <div class="feature">
-      <h3>
-        <span class="lang-de">📍 Standortbasierte Empfehlungen</span>
-        <span class="lang-en">📍 Location-based recommendations</span>
-      </h3>
-      <p>
-        <span class="lang-de">Erhalte automatische Outfit-Vorschläge passend zum Wetter an Deinem aktuellen Standort oder einem Ort Deiner Wahl.</span>
-        <span class="lang-en">Get automatic outfit suggestions tailored to the weather at your current location or a place of your choice.</span>
-      </p>
-    </div>
-
-    <div class="feature">
-      <h3>
-        <span class="lang-de">📅 7-Tage-Wetterprognose</span>
-        <span class="lang-en">📅 7-day weather forecast</span>
-      </h3>
-      <p>
-        <span class="lang-de">Plane die Kleidung Deines Babys für die ganze Woche mit zuverlässigen Wettervorhersagen.</span>
-        <span class="lang-en">Plan your baby's outfits for the whole week with reliable weather forecasts.</span>
-      </p>
-    </div>
-
-    <div class="feature">
-      <h3>
-        <span class="lang-de">⚠️ Wetterwarnungen</span>
-        <span class="lang-en">⚠️ Weather alerts</span>
-      </h3>
-      <p>
-        <span class="lang-de">Erhalte Hinweise bei extremen Wetterbedingungen wie Hitze, Kälte oder starkem Wind – damit Du Dein Baby besonders gut schützen kannst.</span>
-        <span class="lang-en">Receive notifications about extreme weather conditions such as heat, cold or strong wind – so you can protect your baby even better.</span>
-      </p>
-    </div>
-
-    <div class="feature">
-      <h3>
-        <span class="lang-de">👶 Trage- &amp; Kinderwagen-Modus</span>
-        <span class="lang-en">👶 Baby carrier &amp; stroller mode</span>
-      </h3>
-      <p>
-        <span class="lang-de">Wähle den passenden Modus, damit Dein Baby immer ideal geschützt ist – egal ob Du es trägst oder im Wagen fährst.</span>
-        <span class="lang-en">Choose the right mode so your baby is always perfectly protected – whether you carry them or push them in the stroller.</span>
-      </p>
-    </div>
-
-    <div class="feature">
-      <h3>
-        <span class="lang-de">👕 Alternative Outfits &amp; Favoriten</span>
-        <span class="lang-en">👕 Alternative outfits &amp; favorites</span>
-      </h3>
-      <p>
-        <span class="lang-de">Fehlt ein vorgeschlagenes Kleidungsstück? Kein Problem! Wähle eine passende Alternative und speichere sie als Favorit für künftige Empfehlungen.</span>
-        <span class="lang-en">Missing one of the suggested clothing items? No problem! Select a suitable alternative and save it as a favorite for future recommendations.</span>
-      </p>
-    </div>
-
-    <div class="feature">
-      <h3>
-        <span class="lang-de">🌓 Automatischer Dark- &amp; Light-Mode</span>
-        <span class="lang-en">🌓 Automatic dark &amp; light mode</span>
-      </h3>
-      <p>
-        <span class="lang-de">Die App passt sich automatisch der Darstellung Deines Geräts an – hell am Tag, dunkel bei Nacht.</span>
-        <span class="lang-en">The app automatically adapts to your device’s appearance – light during the day, dark at night.</span>
-      </p>
-    </div>
-  </section>
-
-  <div class="cta">
-    <p>
-      <span class="lang-de"><strong>Erlebe, wie einfach es ist, Dein Baby wettergerecht anzuziehen!</strong></span>
-      <span class="lang-en"><strong>See how easy it is to dress your baby appropriately for the weather!</strong></span>
-    </p>
-    <button class="download" onclick="window.location.href='https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8'">
-      <span class="lang-de">Jetzt App herunterladen</span>
-      <span class="lang-en">Download the app now</span>
-    </button>
-  </div>
-</div>
-
-<footer>
-  <p>
-    <a href="privacy.html">
-      <span class="lang-de">Datenschutzerklärung</span>
-      <span class="lang-en">Privacy Policy</span>
+<body class="home-page">
+  <header class="site-header" data-site-header>
+    <a class="brand" href="index.html" aria-label="Baby Clothing Forecast">
+      <span class="brand-mark">BCF</span>
+      <span>Baby Clothing Forecast</span>
     </a>
-  </p>
-  <p>
-    <a href="impressum.html">
-      <span class="lang-de">Impressum</span>
-      <span class="lang-en">Imprint</span>
-    </a>
-  </p>
-  <span class="lang-de">&copy; 2025 Baby Clothing Forecast · Alle Rechte vorbehalten</span>
-  <span class="lang-en">&copy; 2025 Baby Clothing Forecast · All rights reserved</span>
-</footer>
 
-<script>
-  (function () {
-    const html = document.documentElement;
-    const toggleButtons = document.querySelectorAll('.language-toggle button');
-    const STORAGE_KEY = 'bcf-lang';
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="#outdoor">
+        <span class="lang-de">Outdoor</span>
+        <span class="lang-en">Outdoor</span>
+      </a>
+      <a href="#sleep">
+        <span class="lang-de">Schlaf-Modus</span>
+        <span class="lang-en">Sleep Mode</span>
+      </a>
+      <a href="#download">
+        <span class="lang-de">Download</span>
+        <span class="lang-en">Download</span>
+      </a>
+    </nav>
 
-    function applyLanguage(lang) {
-      const normalized = lang === 'en' ? 'en' : 'de';
-      html.setAttribute('data-lang', normalized);
-      toggleButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.setLang === normalized);
-      });
-      try {
-        localStorage.setItem(STORAGE_KEY, normalized);
-      } catch (e) {
-        // ignore storage errors (e.g. in private mode)
-      }
-    }
+    <div class="header-actions">
+      <a class="nav-download" href="https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8">
+        <span class="lang-de">App Store</span>
+        <span class="lang-en">App Store</span>
+      </a>
+      <div class="language-toggle" aria-label="Sprachauswahl / Language switcher">
+        <button type="button" data-set-lang="de" class="active">DE</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
 
-    toggleButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        applyLanguage(btn.dataset.setLang);
-      });
-    });
+  <main>
+    <section class="hero section-full">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span class="lang-de">Wetter draußen. Ruhe drinnen.</span>
+          <span class="lang-en">Weather outside. Calm inside.</span>
+        </p>
+        <h1>Baby Clothing Forecast</h1>
+        <p class="hero-lead">
+          <span class="lang-de">Kleidungsempfehlungen, die dich im Babyalltag unterstützen.</span>
+          <span class="lang-en">Clothing recommendations designed to support everyday life with your baby.</span>
+        </p>
+        <p class="hero-support">
+          <span class="lang-de">Die App kann dir helfen, passende Kleidung für Wetter und Schlaf besser einzuschätzen. Du behältst immer die Entscheidung, was sich für dein Baby richtig anfühlt.</span>
+          <span class="lang-en">The app can help you assess clothing for weather and sleep more easily. You always decide what feels right for your baby.</span>
+        </p>
+        <div class="hero-ctas">
+          <a class="primary-cta" href="https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8">
+            <span class="lang-de">Im App Store laden</span>
+            <span class="lang-en">Download on the App Store</span>
+          </a>
+          <a class="secondary-cta" href="#features">
+            <span class="lang-de">Funktionen ansehen</span>
+            <span class="lang-en">Explore features</span>
+          </a>
+        </div>
+        <div class="mode-pills" aria-label="Aktive App-Bereiche">
+          <span>Outdoor</span>
+          <span>
+            <span class="lang-de">Schlaf-Modus</span>
+            <span class="lang-en">Sleep Mode</span>
+            <strong>Premium</strong>
+          </span>
+        </div>
+      </div>
 
-    // Initial language: try stored value, fallback to German (default)
-    let initial = 'de';
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored === 'de' || stored === 'en') {
-        initial = stored;
-      }
-    } catch (e) {
-    }
-    applyLanguage(initial);
-  })();
-</script>
+      <div class="hero-visual" data-depth="0.08">
+        <img src="assets/app_device_overview_light.png" alt="Baby Clothing Forecast App Screenshot mit wetterbasierten Kleidungsempfehlungen" />
+      </div>
+    </section>
 
+    <section id="outdoor" class="product-moment outdoor-moment section-full">
+      <div class="moment-copy reveal">
+        <p class="eyebrow">
+          <span class="lang-de">Outdoor</span>
+          <span class="lang-en">Outdoor</span>
+        </p>
+        <h2>
+          <span class="lang-de">Draußen besser einschätzen.</span>
+          <span class="lang-en">Assess outdoor clothing more easily.</span>
+        </h2>
+        <p>
+          <span class="lang-de">Baby Clothing Forecast verbindet Wetterdaten mit Kleidungsvorschlägen für deinen Standort oder einen Ort deiner Wahl. Die Empfehlungen können dir helfen, Temperatur, Tageszeit und Wetterlage im Blick zu behalten.</span>
+          <span class="lang-en">Baby Clothing Forecast combines weather data with clothing suggestions for your current location or a place of your choice. Recommendations can help you keep temperature, time of day and weather conditions in view.</span>
+        </p>
+        <ul class="feature-list">
+          <li>
+            <span class="lang-de">Vorhersage für mehrere Tagesabschnitte</span>
+            <span class="lang-en">Forecasts across multiple day intervals</span>
+          </li>
+          <li>
+            <span class="lang-de">Modus für Trage oder Kinderwagen</span>
+            <span class="lang-en">Modes for baby carrier or stroller</span>
+          </li>
+          <li>
+            <span class="lang-de">Hinweise zu Hitze, Kälte, UV, Wind oder Regen</span>
+            <span class="lang-en">Notes for heat, cold, UV, wind or rain</span>
+          </li>
+        </ul>
+      </div>
+      <div class="moment-visual reveal">
+        <img src="assets/store_screen_gallery.png" alt="Galerieansicht der App mit Wetter und Kleidungsempfehlungen" />
+      </div>
+    </section>
+
+    <section id="sleep" class="product-moment sleep-moment section-full">
+      <div class="sleep-backdrop" aria-hidden="true"></div>
+      <div class="moment-visual sleep-device-visual reveal">
+        <div class="phone-device" aria-label="Schlaf-Modus der Baby Clothing Forecast App mit Raumtemperatur und TOG-Auswahl">
+          <span class="phone-button phone-button-left-top" aria-hidden="true"></span>
+          <span class="phone-button phone-button-left-mid" aria-hidden="true"></span>
+          <span class="phone-button phone-button-left-bottom" aria-hidden="true"></span>
+          <span class="phone-button phone-button-right" aria-hidden="true"></span>
+          <div class="phone-screen">
+            <img src="assets/sleep_mode_screen.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="moment-copy reveal">
+        <p class="eyebrow premium-label">
+          <span class="lang-de">Schlaf-Modus</span>
+          <span class="lang-en">Sleep Mode</span>
+          <strong>Premium</strong>
+        </p>
+        <h2>
+          <span class="lang-de">Mehr Orientierung für die Nacht.</span>
+          <span class="lang-en">More guidance for the night.</span>
+        </h2>
+        <p>
+          <span class="lang-de">Der Schlaf-Modus kann dich dabei unterstützen, Schlafkleidung anhand der Raumtemperatur besser einzuordnen. TOG-Werte, Materialhinweise und der Nackentest dienen als praktische Orientierung im Alltag.</span>
+          <span class="lang-en">Sleep Mode can support your assessment of sleepwear based on room temperature. TOG values, material notes and the neck test are practical guidance for everyday use.</span>
+        </p>
+        <div class="sleep-metrics">
+          <span>TOG</span>
+          <span>16-20 °C</span>
+          <span>
+            <span class="lang-de">Nackentest</span>
+            <span class="lang-en">Neck test</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="feature-showcase">
+      <div class="section-heading reveal">
+        <p class="eyebrow">
+          <span class="lang-de">Im Alltag anpassbar</span>
+          <span class="lang-en">Adaptable in everyday life</span>
+        </p>
+        <h2>
+          <span class="lang-de">Empfehlungen verstehen und anpassen.</span>
+          <span class="lang-en">Understand and adapt recommendations.</span>
+        </h2>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <img src="assets/store_screen_alternatives.png" alt="Alternative Empfehlungen und Favoriten in der App" />
+          <h3>
+            <span class="lang-de">Alternativen und Favoriten</span>
+            <span class="lang-en">Alternatives and favorites</span>
+          </h3>
+          <p>
+            <span class="lang-de">Wenn ein Kleidungsstück nicht passt oder nicht verfügbar ist, können Alternativen und Favoriten helfen, Empfehlungen besser an deinen Alltag anzupassen.</span>
+            <span class="lang-en">When an item does not fit or is not available, alternatives and favorites can help adapt recommendations to your everyday life.</span>
+          </p>
+        </article>
+
+        <article class="feature-card reveal">
+          <img src="assets/store_screen_modes.png" alt="Light und Dark Mode der App" />
+          <h3>
+            <span class="lang-de">Light und Dark Mode</span>
+            <span class="lang-en">Light and Dark Mode</span>
+          </h3>
+          <p>
+            <span class="lang-de">Die App passt sich der Darstellung deines Geräts an und bleibt dadurch tagsüber hell und nachts angenehm ruhig.</span>
+            <span class="lang-en">The app follows your device appearance, staying bright during the day and calmer at night.</span>
+          </p>
+        </article>
+
+        <article class="feature-card compact-card reveal">
+          <h3>
+            <span class="lang-de">Deutsch und Englisch</span>
+            <span class="lang-en">German and English</span>
+          </h3>
+          <p>
+            <span class="lang-de">Website und App unterstützen Deutsch und Englisch, inklusive schneller Sprachauswahl.</span>
+            <span class="lang-en">The website and app support German and English, including quick language switching.</span>
+          </p>
+        </article>
+
+        <article class="feature-card compact-card reveal">
+          <h3>
+            <span class="lang-de">Transparente Orientierung</span>
+            <span class="lang-en">Transparent guidance</span>
+          </h3>
+          <p>
+            <span class="lang-de">Texte bleiben bewusst vorsichtig: Empfehlungen können unterstützen, während individuelle Faktoren immer zählen.</span>
+            <span class="lang-en">Wording stays deliberately careful: recommendations can support you, while individual factors always matter.</span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="trust-strip guidance-note reveal" aria-label="Hinweis">
+      <p>
+        <span class="lang-de">Unsere Empfehlungen dienen als Orientierung. Bitte berücksichtige die individuellen Bedürfnisse und das Temperaturempfinden deines Kindes - die endgültige Entscheidung liegt bei dir.</span>
+        <span class="lang-en">Our recommendations are intended as guidance. Please consider your child's individual needs and temperature perception - the final decision is yours.</span>
+      </p>
+    </section>
+
+    <section id="download" class="download-section reveal">
+      <p class="eyebrow">
+        <span class="lang-de">Jetzt ausprobieren</span>
+        <span class="lang-en">Try it now</span>
+      </p>
+      <h2>
+        <span class="lang-de">Eine App für Wetter draußen und Ruhe drinnen.</span>
+        <span class="lang-en">One app for weather outside and calm inside.</span>
+      </h2>
+      <p>
+        <span class="lang-de">Baby Clothing Forecast ist im App Store verfügbar.</span>
+        <span class="lang-en">Baby Clothing Forecast is available on the App Store.</span>
+      </p>
+      <a class="primary-cta" href="https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8">
+        <span class="lang-de">Im App Store laden</span>
+        <span class="lang-en">Download on the App Store</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Baby Clothing Forecast</strong>
+      <p>
+        <span class="lang-de">&copy; 2026 Baby Clothing Forecast. Alle Rechte vorbehalten.</span>
+        <span class="lang-en">&copy; 2026 Baby Clothing Forecast. All rights reserved.</span>
+      </p>
+    </div>
+    <nav aria-label="Rechtliches">
+      <a href="privacy.html">
+        <span class="lang-de">Datenschutzerklärung</span>
+        <span class="lang-en">Privacy Policy</span>
+      </a>
+      <a href="impressum.html">
+        <span class="lang-de">Impressum</span>
+        <span class="lang-en">Imprint</span>
+      </a>
+    </nav>
+  </footer>
+
+  <script src="assets/site.js"></script>
 </body>
 </html>

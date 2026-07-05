@@ -68,8 +68,42 @@
       display: inline;
     }
   </style>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body class="legal-page">
+
+<header class="site-header" data-site-header>
+  <a class="brand" href="index.html" aria-label="Baby Clothing Forecast">
+    <span class="brand-mark">BCF</span>
+    <span>Baby Clothing Forecast</span>
+  </a>
+
+  <nav class="site-nav" aria-label="Navigation">
+    <a href="index.html#outdoor">
+      <span class="lang-de">Outdoor</span>
+      <span class="lang-en">Outdoor</span>
+    </a>
+    <a href="index.html#sleep">
+      <span class="lang-de">Schlaf-Modus</span>
+      <span class="lang-en">Sleep Mode</span>
+    </a>
+    <a href="index.html#download">
+      <span class="lang-de">Download</span>
+      <span class="lang-en">Download</span>
+    </a>
+  </nav>
+
+  <div class="header-actions">
+    <a class="nav-download" href="https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8">
+      <span class="lang-de">App Store</span>
+      <span class="lang-en">App Store</span>
+    </a>
+    <div class="language-toggle" aria-label="Sprachauswahl / Language switcher">
+      <button type="button" data-set-lang="de" class="active">DE</button>
+      <button type="button" data-set-lang="en">EN</button>
+    </div>
+  </div>
+</header>
 
 <div class="language-toggle" aria-label="Sprachauswahl / Language switcher">
   <button type="button" data-set-lang="de" class="active">DE</button>
@@ -226,42 +260,7 @@
   </span>
 </p>
 
-<script>
-  (function () {
-    const html = document.documentElement;
-    const toggleButtons = document.querySelectorAll('.language-toggle button');
-    const STORAGE_KEY = 'bcf-lang';
-
-    function applyLanguage(lang) {
-      const normalized = lang === 'en' ? 'en' : 'de';
-      html.setAttribute('data-lang', normalized);
-      toggleButtons.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.setLang === normalized);
-      });
-      try {
-        localStorage.setItem(STORAGE_KEY, normalized);
-      } catch (e) {
-        // ignore storage errors
-      }
-    }
-
-    toggleButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        applyLanguage(btn.dataset.setLang);
-      });
-    });
-
-    let initial = 'de';
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored === 'de' || stored === 'en') {
-        initial = stored;
-      }
-    } catch (e) {
-    }
-    applyLanguage(initial);
-  })();
-</script>
+<script src="assets/site.js"></script>
 
 </body>
 </html>
