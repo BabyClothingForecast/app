@@ -3,23 +3,26 @@
   const toggleButtons = document.querySelectorAll(".language-toggle button");
   const storageKey = "bcf-lang";
 
-  function applyLanguage(lang) {
+  function applyLanguage(lang, rememberChoice = false) {
     const normalized = lang === "en" ? "en" : "de";
     html.setAttribute("data-lang", normalized);
     html.setAttribute("lang", normalized);
     toggleButtons.forEach((button) => {
       button.classList.toggle("active", button.dataset.setLang === normalized);
+      button.setAttribute("aria-pressed", String(button.dataset.setLang === normalized));
     });
 
-    try {
-      localStorage.setItem(storageKey, normalized);
-    } catch (error) {
-      // Ignore storage errors in private browsing modes.
+    if (rememberChoice) {
+      try {
+        localStorage.setItem(storageKey, normalized);
+      } catch (error) {
+        // Language switching also works when browser storage is unavailable.
+      }
     }
   }
 
   toggleButtons.forEach((button) => {
-    button.addEventListener("click", () => applyLanguage(button.dataset.setLang));
+    button.addEventListener("click", () => applyLanguage(button.dataset.setLang, true));
   });
 
   let initial = "de";

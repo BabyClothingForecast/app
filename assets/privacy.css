@@ -1,0 +1,50 @@
+/* Legal page layout, independent of the pending homepage redesign. */
+.legal-page { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.legal-content {
+  width: min(860px, calc(100% - 36px));
+  margin: 0 auto 64px;
+  overflow-wrap: anywhere;
+}
+
+.legal-content h1 {
+  margin-top: 82px;
+  margin-bottom: 20px;
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  line-height: 0.96;
+  color: var(--ink) !important;
+}
+
+.legal-content h2 {
+  margin-top: 46px;
+  color: #1b5f73 !important;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+}
+
+.legal-content h3 {
+  margin-top: 30px;
+  color: #2f2f2f !important;
+}
+
+.legal-content p,
+.legal-content ul {
+  color: #3d3d3d;
+  font-size: 1.04rem;
+}
+
+.legal-content li + li {
+  margin-top: 16px;
+}
+
+.legal-draft-notice,
+.legal-rights-notice {
+  padding: 20px;
+  border-left: 4px solid #1b5f73;
+  border-radius: 8px;
+  background: #eaf4f6;
+}
+
+.legal-draft-notice {
+  border-left-color: #916000;
+  background: #fff3d6;
+}
+
