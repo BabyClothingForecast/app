@@ -4,267 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baby Clothing Forecast</title>
-  <meta name="description" content="Baby Clothing Forecast unterstützt Eltern mit wetterbasierten Kleidungsempfehlungen und Orientierung für Schlafkleidung." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <meta name="description" content="Orientierung bei der Kleiderwahl für Wetter, Schlaf, Autofahrten und die Erstausstattung deines Babys." />
+  <meta name="referrer" content="no-referrer" />
   <link rel="stylesheet" href="assets/site.css" />
 </head>
-<body class="home-page">
+<body class="home-page home-v2">
   <header class="site-header" data-site-header>
-    <a class="brand" href="index.html" aria-label="Baby Clothing Forecast">
-      <span class="brand-mark">BCF</span>
-      <span>Baby Clothing Forecast</span>
-    </a>
-
-    <nav class="site-nav" aria-label="Hauptnavigation">
-      <a href="#outdoor">
-        <span class="lang-de">Outdoor</span>
-        <span class="lang-en">Outdoor</span>
-      </a>
-      <a href="#sleep">
-        <span class="lang-de">Schlaf-Modus</span>
-        <span class="lang-en">Sleep Mode</span>
-      </a>
-      <a href="#download">
-        <span class="lang-de">Download</span>
-        <span class="lang-en">Download</span>
-      </a>
-    </nav>
-
-    <div class="header-actions">
-      <a class="nav-download" href="https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8">
-        <span class="lang-de">App Store</span>
-        <span class="lang-en">App Store</span>
-      </a>
-      <div class="language-toggle" aria-label="Sprachauswahl / Language switcher">
-        <button type="button" data-set-lang="de" class="active">DE</button>
-        <button type="button" data-set-lang="en">EN</button>
-      </div>
-    </div>
+    <a class="brand" href="index.html" aria-label="Baby Clothing Forecast Startseite"><span class="brand-mark">BCF</span><span>Baby Clothing Forecast</span></a>
+    <nav class="site-nav" aria-label="Hauptnavigation"><a href="#outdoor">Outdoor</a><a href="#premium">Premium</a><a href="#details">Details</a></nav>
+    <div class="header-actions"><a class="nav-download" href="https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8">App Store</a><div class="language-toggle" aria-label="Sprachauswahl / Language switcher"><button type="button" data-set-lang="de" class="active">DE</button><button type="button" data-set-lang="en">EN</button></div></div>
   </header>
-
   <main>
-    <section class="hero section-full">
-      <div class="hero-copy">
-        <p class="eyebrow">
-          <span class="lang-de">Wetter draußen. Ruhe drinnen.</span>
-          <span class="lang-en">Weather outside. Calm inside.</span>
-        </p>
-        <h1>Baby Clothing Forecast</h1>
-        <p class="hero-lead">
-          <span class="lang-de">Kleidungsempfehlungen, die dich im Babyalltag unterstützen.</span>
-          <span class="lang-en">Clothing recommendations designed to support everyday life with your baby.</span>
-        </p>
-        <p class="hero-support">
-          <span class="lang-de">Die App kann dir helfen, passende Kleidung für Wetter und Schlaf besser einzuschätzen. Du behältst immer die Entscheidung, was sich für dein Baby richtig anfühlt.</span>
-          <span class="lang-en">The app can help you assess clothing for weather and sleep more easily. You always decide what feels right for your baby.</span>
-        </p>
-        <div class="hero-ctas">
-          <a class="primary-cta" href="https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8">
-            <span class="lang-de">Im App Store laden</span>
-            <span class="lang-en">Download on the App Store</span>
-          </a>
-          <a class="secondary-cta" href="#features">
-            <span class="lang-de">Funktionen ansehen</span>
-            <span class="lang-en">Explore features</span>
-          </a>
-        </div>
-        <div class="mode-pills" aria-label="Aktive App-Bereiche">
-          <span>Outdoor</span>
-          <span>
-            <span class="lang-de">Schlaf-Modus</span>
-            <span class="lang-en">Sleep Mode</span>
-            <strong>Premium</strong>
-          </span>
+    <section class="hero-v2 section-full">
+      <div class="hero-v2-copy reveal">
+        <p class="eyebrow"><span class="lang-de">Vier Situationen. Eine ruhige Entscheidungshilfe.</span><span class="lang-en">Four situations. One calm guide.</span></p>
+        <h1>Baby Clothing<br />Forecast</h1>
+        <p class="hero-lead"><span class="lang-de">Kleidung für verschiedene Situationen leichter einordnen.</span><span class="lang-en">Assess clothing for different situations a little more easily.</span></p>
+        <p class="hero-support"><span class="lang-de">Wetter draußen, Schlaf zu Hause, die Fahrt im Auto oder die ersten Wochen: Die App kann dich mit situationsbezogenen Kleidungstipps unterstützen.</span><span class="lang-en">Weather outside, sleep at home, car journeys or the first weeks: the app can support you with clothing tips for each situation.</span></p>
+        <div class="hero-ctas"><a class="primary-cta" href="https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8"><span class="lang-de">Im App Store laden</span><span class="lang-en">Download on the App Store</span></a><a class="secondary-cta" href="#outdoor"><span class="lang-de">Funktionen entdecken</span><span class="lang-en">Explore features</span></a></div>
+      </div>
+      <div class="hero-stage" aria-label="Aktuelle Ansichten der Baby Clothing Forecast App">
+        <div class="device device-back device-sleep"><div class="device-screen"><img src="assets/app-sleep-current.png" alt="Aktueller Schlaf-Modus mit Raumtemperatur und TOG-Auswahl" /></div></div>
+        <div class="device device-back device-car"><div class="device-screen"><img src="assets/app-car-current.png" alt="Aktueller Auto-Modus mit Kleidungstipps für die Babyschale" /></div></div>
+        <div class="device device-main"><div class="device-screen"><img src="assets/app-outdoor-current.png" alt="Aktuelle Outdoor-Ansicht mit Wetter und Kleidungstipps" /></div></div>
+      </div>
+      <a class="scroll-cue" href="#outdoor" aria-label="Zu Outdoor scrollen"><span></span></a>
+    </section>
+
+    <section id="outdoor" class="product-chapter outdoor-chapter section-full">
+      <div class="chapter-copy reveal">
+        <p class="eyebrow">Outdoor</p><h2><span class="lang-de">Wetter als Orientierung.</span><span class="lang-en">Weather as guidance.</span></h2>
+        <p><span class="lang-de">Die App stellt Wetterdaten und allgemeine Kleidungsvorschläge für den aktuellen Standort zusammen. Mit Premium kannst du einen Ort frei auswählen und Vorhersagen für weitere Tage ansehen. Mehrere Tagesabschnitte können dir helfen, Veränderungen über den Tag hinweg einzuordnen.</span><span class="lang-en">The app brings together weather data and general clothing suggestions for your current location. Premium lets you choose another place and view forecasts for later days. Several day intervals can help you assess changes throughout the day.</span></p>
+        <div class="fact-grid">
+          <div><strong><span class="lang-de">3 Situationen</span><span class="lang-en">3 situations</span></strong><span><span class="lang-de">Draußen, Trage, Kinderwagen</span><span class="lang-en">Outdoors, carrier, stroller</span></span></div>
+          <div><strong><span class="lang-de">Flexibel</span><span class="lang-en">Flexible</span></strong><span><span class="lang-de">Liste oder Galerie</span><span class="lang-en">List or gallery</span></span></div>
+          <div><strong><span class="lang-de">Mit Premium</span><span class="lang-en">With Premium</span></strong><span><span class="lang-de">Ortswahl und weitere Tage</span><span class="lang-en">Place search and later days</span></span></div>
+          <div><strong><span class="lang-de">Anpassbar</span><span class="lang-en">Adaptable</span></strong><span><span class="lang-de">Alternativen und Favoriten</span><span class="lang-en">Alternatives and favourites</span></span></div>
         </div>
       </div>
-
-      <div class="hero-visual" data-depth="0.08">
-        <img src="assets/app_device_overview_light.png" alt="Baby Clothing Forecast App Screenshot mit wetterbasierten Kleidungsempfehlungen" />
-      </div>
+      <div class="chapter-device reveal"><div class="device device-full"><div class="device-screen"><img src="assets/app-outdoor-current.png" alt="Outdoor-Ansicht der App für Hamburg" /></div></div></div>
     </section>
 
-    <section id="outdoor" class="product-moment outdoor-moment section-full">
-      <div class="moment-copy reveal">
-        <p class="eyebrow">
-          <span class="lang-de">Outdoor</span>
-          <span class="lang-en">Outdoor</span>
-        </p>
-        <h2>
-          <span class="lang-de">Draußen besser einschätzen.</span>
-          <span class="lang-en">Assess outdoor clothing more easily.</span>
-        </h2>
-        <p>
-          <span class="lang-de">Baby Clothing Forecast verbindet Wetterdaten mit Kleidungsvorschlägen für deinen Standort oder einen Ort deiner Wahl. Die Empfehlungen können dir helfen, Temperatur, Tageszeit und Wetterlage im Blick zu behalten.</span>
-          <span class="lang-en">Baby Clothing Forecast combines weather data with clothing suggestions for your current location or a place of your choice. Recommendations can help you keep temperature, time of day and weather conditions in view.</span>
-        </p>
-        <ul class="feature-list">
-          <li>
-            <span class="lang-de">Vorhersage für mehrere Tagesabschnitte</span>
-            <span class="lang-en">Forecasts across multiple day intervals</span>
-          </li>
-          <li>
-            <span class="lang-de">Modus für Trage oder Kinderwagen</span>
-            <span class="lang-en">Modes for baby carrier or stroller</span>
-          </li>
-          <li>
-            <span class="lang-de">Hinweise zu Hitze, Kälte, UV, Wind oder Regen</span>
-            <span class="lang-en">Notes for heat, cold, UV, wind or rain</span>
-          </li>
-        </ul>
-      </div>
-      <div class="moment-visual reveal">
-        <img src="assets/store_screen_gallery.png" alt="Galerieansicht der App mit Wetter und Kleidungsempfehlungen" />
-      </div>
+    <section id="premium" class="premium-suite">
+      <div class="premium-intro reveal"><p class="eyebrow"><span class="lang-de">Premium-Bereiche</span><span class="lang-en">Premium modes</span></p><h2><span class="lang-de">Mehr Situationen.<br />Mehr Orientierung.</span><span class="lang-en">More situations.<br />More guidance.</span></h2><p><span class="lang-de">Drei zusätzliche Modi bieten allgemeine Orientierung zu Schlaf, Autofahrten und der saisonalen Erstausstattung.</span><span class="lang-en">Three additional modes offer general guidance for sleep, car journeys and seasonal initial equipment.</span></p></div>
+      <article id="sleep" class="premium-story story-sleep">
+        <div class="story-copy reveal"><span class="story-index">01</span><p class="eyebrow"><span class="lang-de">Schlafen</span><span class="lang-en">Sleep</span></p><h3><span class="lang-de">Raumtemperatur trifft TOG.</span><span class="lang-en">Room temperature meets TOG.</span></h3><p><span class="lang-de">Der Schlaf-Modus kann dabei helfen, Schlafsack und Kleidung anhand der Raumtemperatur einzuordnen. TOG-Auswahl, Materialhinweise und Nackentest ergänzen die Orientierung.</span><span class="lang-en">Sleep Mode can help assess sleeping bags and clothing based on room temperature. TOG selection, material notes and the neck test add context.</span></p></div>
+        <div class="story-device reveal"><div class="device device-full"><div class="device-screen"><img src="assets/app-sleep-current.png" alt="Schlaf-Modus mit 18 Grad Raumtemperatur" /></div></div></div>
+      </article>
+      <article id="car" class="premium-story story-car">
+        <div class="story-copy reveal"><span class="story-index">02</span><p class="eyebrow"><span class="lang-de">Auto</span><span class="lang-en">Car</span></p><h3><span class="lang-de">Orientierung für die Babyschale.</span><span class="lang-en">Guidance for the infant carrier.</span></h3><p><span class="lang-de">Anhand der erwarteten Innenraumtemperatur kann die App Hinweise zu wenig auftragenden Schichten und möglicher zusätzlicher Wärme nach dem Anschnallen geben. Maßgeblich bleiben die Anleitung deiner Babyschale und deine individuelle Einschätzung.</span><span class="lang-en">Based on the expected cabin temperature, the app can provide guidance on low-bulk layers and possible additional warmth after buckling. Your infant carrier instructions and individual assessment remain decisive.</span></p></div>
+        <div class="story-device reveal"><div class="device device-full"><div class="device-screen"><img src="assets/app-car-current.png" alt="Auto-Modus mit Empfehlungen bei 20 Grad" /></div></div></div>
+      </article>
+      <article id="equipment" class="premium-story story-equipment">
+        <div class="story-copy reveal"><span class="story-index">03</span><p class="eyebrow"><span class="lang-de">Erstausstattung</span><span class="lang-en">Initial equipment</span></p><h3><span class="lang-de">Orientierung für die ersten Wochen.</span><span class="lang-en">Guidance for the first weeks.</span></h3><p><span class="lang-de">Eine saisonale Checkliste kann dir helfen, Kleidung, Accessoires und praktische Grundlagen rund um den erwarteten Geburtsmonat zu sortieren.</span><span class="lang-en">A seasonal checklist can help organise clothing, accessories and practical basics around the expected birth month.</span></p></div>
+        <div class="story-device reveal"><div class="device device-full"><div class="device-screen"><img src="assets/app-equipment-current.png" alt="Saisonale Checkliste für die Erstausstattung" /></div></div></div>
+      </article>
     </section>
 
-    <section id="sleep" class="product-moment sleep-moment section-full">
-      <div class="sleep-backdrop" aria-hidden="true"></div>
-      <div class="moment-visual sleep-device-visual reveal">
-        <div class="phone-device" aria-label="Schlaf-Modus der Baby Clothing Forecast App mit Raumtemperatur und TOG-Auswahl">
-          <span class="phone-button phone-button-left-top" aria-hidden="true"></span>
-          <span class="phone-button phone-button-left-mid" aria-hidden="true"></span>
-          <span class="phone-button phone-button-left-bottom" aria-hidden="true"></span>
-          <span class="phone-button phone-button-right" aria-hidden="true"></span>
-          <div class="phone-screen">
-            <img src="assets/sleep_mode_screen.png" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="moment-copy reveal">
-        <p class="eyebrow premium-label">
-          <span class="lang-de">Schlaf-Modus</span>
-          <span class="lang-en">Sleep Mode</span>
-          <strong>Premium</strong>
-        </p>
-        <h2>
-          <span class="lang-de">Mehr Orientierung für die Nacht.</span>
-          <span class="lang-en">More guidance for the night.</span>
-        </h2>
-        <p>
-          <span class="lang-de">Der Schlaf-Modus kann dich dabei unterstützen, Schlafkleidung anhand der Raumtemperatur besser einzuordnen. TOG-Werte, Materialhinweise und der Nackentest dienen als praktische Orientierung im Alltag.</span>
-          <span class="lang-en">Sleep Mode can support your assessment of sleepwear based on room temperature. TOG values, material notes and the neck test are practical guidance for everyday use.</span>
-        </p>
-        <div class="sleep-metrics">
-          <span>TOG</span>
-          <span>16-20 °C</span>
-          <span>
-            <span class="lang-de">Nackentest</span>
-            <span class="lang-en">Neck test</span>
-          </span>
-        </div>
+    <section id="details" class="detail-band">
+      <div class="detail-heading reveal"><p class="eyebrow"><span class="lang-de">Im Alltag hilfreich</span><span class="lang-en">Useful every day</span></p><h2><span class="lang-de">Kleine Details,<br />die mitdenken.</span><span class="lang-en">Thoughtful<br />small details.</span></h2></div>
+      <div class="detail-list">
+        <article class="reveal"><span>↔</span><h3><span class="lang-de">Alternativen</span><span class="lang-en">Alternatives</span></h3><p><span class="lang-de">Andere Kleidungsstücke ansehen und Favoriten für später merken.</span><span class="lang-en">Explore other items and save favourites for later.</span></p></article>
+        <article class="reveal"><span>◐</span><h3>Light &amp; Dark</h3><p><span class="lang-de">Die Darstellung folgt auf Wunsch dem Erscheinungsbild deines Geräts.</span><span class="lang-en">The appearance can follow your device settings.</span></p></article>
+        <article class="reveal"><span>DE·EN</span><h3><span class="lang-de">Zweisprachig</span><span class="lang-en">Bilingual</span></h3><p><span class="lang-de">App und Website sind auf Deutsch und Englisch verfügbar.</span><span class="lang-en">The app and website are available in German and English.</span></p></article>
+        <article class="reveal"><span>○</span><h3><span class="lang-de">Offline im Blick</span><span class="lang-en">Offline-aware</span></h3><p><span class="lang-de">Gespeicherte Wetterdaten werden mit ihrem Datenstand transparent gekennzeichnet.</span><span class="lang-en">Cached weather data is clearly marked with its update time.</span></p></article>
       </div>
     </section>
-
-    <section id="features" class="feature-showcase">
-      <div class="section-heading reveal">
-        <p class="eyebrow">
-          <span class="lang-de">Im Alltag anpassbar</span>
-          <span class="lang-en">Adaptable in everyday life</span>
-        </p>
-        <h2>
-          <span class="lang-de">Empfehlungen verstehen und anpassen.</span>
-          <span class="lang-en">Understand and adapt recommendations.</span>
-        </h2>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature-card reveal">
-          <img src="assets/store_screen_alternatives.png" alt="Alternative Empfehlungen und Favoriten in der App" />
-          <h3>
-            <span class="lang-de">Alternativen und Favoriten</span>
-            <span class="lang-en">Alternatives and favorites</span>
-          </h3>
-          <p>
-            <span class="lang-de">Wenn ein Kleidungsstück nicht passt oder nicht verfügbar ist, können Alternativen und Favoriten helfen, Empfehlungen besser an deinen Alltag anzupassen.</span>
-            <span class="lang-en">When an item does not fit or is not available, alternatives and favorites can help adapt recommendations to your everyday life.</span>
-          </p>
-        </article>
-
-        <article class="feature-card reveal">
-          <img src="assets/store_screen_modes.png" alt="Light und Dark Mode der App" />
-          <h3>
-            <span class="lang-de">Light und Dark Mode</span>
-            <span class="lang-en">Light and Dark Mode</span>
-          </h3>
-          <p>
-            <span class="lang-de">Die App passt sich der Darstellung deines Geräts an und bleibt dadurch tagsüber hell und nachts angenehm ruhig.</span>
-            <span class="lang-en">The app follows your device appearance, staying bright during the day and calmer at night.</span>
-          </p>
-        </article>
-
-        <article class="feature-card compact-card reveal">
-          <h3>
-            <span class="lang-de">Deutsch und Englisch</span>
-            <span class="lang-en">German and English</span>
-          </h3>
-          <p>
-            <span class="lang-de">Website und App unterstützen Deutsch und Englisch, inklusive schneller Sprachauswahl.</span>
-            <span class="lang-en">The website and app support German and English, including quick language switching.</span>
-          </p>
-        </article>
-
-        <article class="feature-card compact-card reveal">
-          <h3>
-            <span class="lang-de">Transparente Orientierung</span>
-            <span class="lang-en">Transparent guidance</span>
-          </h3>
-          <p>
-            <span class="lang-de">Texte bleiben bewusst vorsichtig: Empfehlungen können unterstützen, während individuelle Faktoren immer zählen.</span>
-            <span class="lang-en">Wording stays deliberately careful: recommendations can support you, while individual factors always matter.</span>
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="trust-strip guidance-note reveal" aria-label="Hinweis">
-      <p>
-        <span class="lang-de">Unsere Empfehlungen dienen als Orientierung. Bitte berücksichtige die individuellen Bedürfnisse und das Temperaturempfinden deines Kindes - die endgültige Entscheidung liegt bei dir.</span>
-        <span class="lang-en">Our recommendations are intended as guidance. Please consider your child's individual needs and temperature perception - the final decision is yours.</span>
-      </p>
-    </section>
-
-    <section id="download" class="download-section reveal">
-      <p class="eyebrow">
-        <span class="lang-de">Jetzt ausprobieren</span>
-        <span class="lang-en">Try it now</span>
-      </p>
-      <h2>
-        <span class="lang-de">Eine App für Wetter draußen und Ruhe drinnen.</span>
-        <span class="lang-en">One app for weather outside and calm inside.</span>
-      </h2>
-      <p>
-        <span class="lang-de">Baby Clothing Forecast ist im App Store verfügbar.</span>
-        <span class="lang-en">Baby Clothing Forecast is available on the App Store.</span>
-      </p>
-      <a class="primary-cta" href="https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8">
-        <span class="lang-de">Im App Store laden</span>
-        <span class="lang-en">Download on the App Store</span>
-      </a>
-    </section>
+    <section class="guidance-v2 reveal" aria-label="Hinweis"><span class="guidance-mark">i</span><p><span class="lang-de">Unsere Bekleidungstipps geben allgemeine Orientierung und ersetzen keine medizinische Beratung. Beachte die tatsächlichen Bedingungen, die Bedürfnisse deines Kindes und die Herstellerhinweise zu Schlafsäcken, Tragehilfen und Kindersitzen.</span><span class="lang-en">Our clothing tips provide general guidance and do not replace medical advice. Consider the actual conditions, your child's needs and the manufacturer instructions for sleeping bags, baby carriers and child car seats.</span></p></section>
+    <section id="download" class="download-v2 reveal"><p class="eyebrow"><span class="lang-de">Im App Store</span><span class="lang-en">On the App Store</span></p><h2><span class="lang-de">Für die kleinen<br />Entscheidungen jeden Tag.</span><span class="lang-en">For the small<br />choices every day.</span></h2><a class="primary-cta" href="https://apps.apple.com/app/apple-store/id6738199616?pt=127446149&ct=Webpage&mt=8"><span class="lang-de">Baby Clothing Forecast laden</span><span class="lang-en">Download Baby Clothing Forecast</span></a></section>
   </main>
-
-  <footer class="site-footer">
-    <div>
-      <strong>Baby Clothing Forecast</strong>
-      <p>
-        <span class="lang-de">&copy; 2026 Baby Clothing Forecast. Alle Rechte vorbehalten.</span>
-        <span class="lang-en">&copy; 2026 Baby Clothing Forecast. All rights reserved.</span>
-      </p>
-    </div>
-    <nav aria-label="Rechtliches">
-      <a href="privacy.html">
-        <span class="lang-de">Datenschutzerklärung</span>
-        <span class="lang-en">Privacy Policy</span>
-      </a>
-      <a href="impressum.html">
-        <span class="lang-de">Impressum</span>
-        <span class="lang-en">Imprint</span>
-      </a>
-    </nav>
-  </footer>
-
+  <footer class="site-footer"><div><strong>Baby Clothing Forecast · BCF Labs GbR</strong><p><span class="lang-de">&copy; 2026 BCF Labs GbR. Alle Rechte vorbehalten.</span><span class="lang-en">&copy; 2026 BCF Labs GbR. All rights reserved.</span></p></div><nav aria-label="Rechtliches / Legal"><a href="privacy.html"><span class="lang-de">Datenschutzerklärung</span><span class="lang-en">Privacy Policy</span></a><a href="impressum.html"><span class="lang-de">Impressum</span><span class="lang-en">Imprint</span></a></nav></footer>
   <script src="assets/site.js"></script>
 </body>
 </html>
